@@ -1,7 +1,15 @@
+import javax.xml.transform.SourceLocator;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
+        String login = "java_skypro_go";
+        String password = " ";
+        String confirmPassword = " ";
+        Validation validation = new Validation();
+
+        validation.loginVerification(login);
     }
 }
