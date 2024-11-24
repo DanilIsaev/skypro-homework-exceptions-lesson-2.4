@@ -6,10 +6,11 @@ public class Main {
     public static void main(String[] args) {
 
         String login = "java_skypro_go";
-        String password = " ";
+        String password = "D_1hWiKjjP_9";
         String confirmPassword = " ";
         Validation validation = new Validation();
 
         validation.loginVerification(login);
+        validation.passwordVerification(password);
     }
 }
