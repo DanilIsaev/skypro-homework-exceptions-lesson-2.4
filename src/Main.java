@@ -7,10 +7,11 @@ public class Main {
 
         String login = "java_skypro_go";
         String password = "D_1hWiKjjP_9";
-        String confirmPassword = " ";
+        String confirmPassword = "D_1hWiKjjP_9";
         Validation validation = new Validation();
 
         validation.loginVerification(login);
         validation.passwordVerification(password);
+        validation.passwordComparison(password, confirmPassword);
     }
 }

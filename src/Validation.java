@@ -22,6 +22,14 @@ public class Validation {
         }
     }
 
+    void passwordComparison(String password, String confirmPassword){
+        if (password.equals(confirmPassword)) {
+
+        } else {
+            throw new WrongPasswordException("Пароли не совпадают");
+        }
+    }
+
 
 
 }
