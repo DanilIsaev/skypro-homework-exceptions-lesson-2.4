@@ -7,37 +7,21 @@ public class Validation {
     private final int fieldLength = 20;
 
     void loginVerification(String login) {
-        checkingLength(login, fieldLength);
-        checkingСharacters(login, regex);
+        if (login.length() <= fieldLength && login.matches(regex)) {
+
+        } else {
+            throw new WrongLoginException("Количество знаков превышено или используются недопустимые символы");
+        }
     }
 
     void passwordVerification(String password) {
-        checkingLength(password, fieldLength);
-        checkingСharacters(password, regex);
-    }
+        if (password.length() <= fieldLength && password.matches(regex)) {
 
-    private void checkingLength(String string, int lengh) {
-        try {
-            if (string.length() <= lengh) {
-
-            } else {
-                throw new WrongLoginException("Количество знаков превышено");
-            }
-        } catch (NullPointerException e) {
-            throw new RuntimeException(e);
+        } else {
+            throw new WrongPasswordException("Количество знаков превышено или используются недопустимые символы");
         }
     }
 
-    private void checkingСharacters(String string, String regex) {
-        try {
-            if (string.matches(regex)) {
 
-            } else {
-                throw new WrongLoginException("Используются запрещенные символы");
-            }
-        } catch (NullPointerException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
 }
