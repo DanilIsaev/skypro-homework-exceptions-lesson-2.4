@@ -5,31 +5,27 @@ public class Validation {
 
     private final String regex = "[a-zA-Z0-9_]*";//разрешенные символы
     private final int fieldLength = 20;
+    boolean isCredentialsCorrect;
 
     void loginVerification(String login) {
-        if (login.length() <= fieldLength && login.matches(regex)) {
-
-        } else {
+        isCredentialsCorrect = login.length() <= fieldLength && login.matches(regex);
+        if (!isCredentialsCorrect) {
             throw new WrongLoginException("Количество знаков превышено или используются недопустимые символы");
         }
     }
 
     void passwordVerification(String password) {
-        if (password.length() <= fieldLength && password.matches(regex)) {
-
-        } else {
+        isCredentialsCorrect = password.length() <= fieldLength && password.matches(regex);
+        if (!isCredentialsCorrect) {
             throw new WrongPasswordException("Количество знаков превышено или используются недопустимые символы");
         }
     }
 
-    void passwordComparison(String password, String confirmPassword){
-        if (password.equals(confirmPassword)) {
-
-        } else {
+    void passwordComparison(String password, String confirmPassword) {
+        if (!password.equals(confirmPassword)) {
             throw new WrongPasswordException("Пароли не совпадают");
         }
     }
-
 
 
 }
